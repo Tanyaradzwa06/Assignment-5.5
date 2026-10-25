@@ -1,0 +1,400 @@
+
+/* =====================================
+   1. CSS VARIABLES / DESIGN TOKENS
+===================================== */
+
+:root {
+    --primary-color: #1d4ed8;
+    --primary-dark: #1e3a8a;
+    --secondary-color: #0f766e;
+    --background-color: #f3f6fb;
+    --surface-color: #ffffff;
+    --text-color: #263247;
+    --muted-color: #64748b;
+    --border-color: #dbe3ef;
+
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 32px;
+
+    --font-body: 16px;
+    --font-small: 14px;
+    --font-heading: 32px;
+
+    --border-radius: 10px;
+    --box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+/* =====================================
+   2. RESET AND GENERAL STYLES
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--font-body);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+p {
+    margin-bottom: var(--spacing-medium);
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+}
+
+h2 {
+    color: var(--primary-dark);
+    font-size: 26px;
+    margin-bottom: var(--spacing-medium);
+}
+
+h3 {
+    color: var(--primary-color);
+    font-size: 20px;
+    margin-bottom: var(--spacing-small);
+}
+
+a {
+    color: var(--primary-color);
+}
+
+/* =====================================
+   3. HEADER
+===================================== */
+
+.site-header {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: var(--spacing-large) 0;
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: var(--font-heading);
+    margin-bottom: var(--spacing-small);
+}
+
+.header-content p {
+    margin-bottom: 0;
+    color: #e0e7ff;
+}
+
+/* =====================================
+   4. NAVIGATION BAR
+===================================== */
+
+.navbar {
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-small);
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* =====================================
+   5. HERO SECTION
+===================================== */
+
+.hero {
+    margin: var(--spacing-large) 0;
+    padding: 48px 24px;
+    text-align: center;
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.hero h2 {
+    font-size: 30px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto var(--spacing-large);
+    color: var(--muted-color);
+}
+
+/* =====================================
+   6. BUTTONS
+===================================== */
+
+.btn {
+    display: inline-block;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    font-family: inherit;
+    font-size: var(--font-body);
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-light {
+    background-color: white;
+    color: var(--primary-dark);
+    border-color: white;
+}
+
+.btn-light:hover {
+    background-color: #e0e7ff;
+    border-color: #e0e7ff;
+    color: var(--primary-dark);
+}
+
+/* =====================================
+   7. CONTENT SECTIONS
+===================================== */
+
+.section {
+    margin: var(--spacing-large) 0;
+}
+
+.section-intro {
+    color: var(--muted-color);
+}
+
+.content-box {
+    padding: 24px;
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.goal-list {
+    padding-left: 24px;
+}
+
+.goal-list li {
+    margin-bottom: var(--spacing-small);
+}
+
+/* =====================================
+   8. REUSABLE CARDS
+===================================== */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--spacing-medium);
+}
+
+.card {
+    padding: 24px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.card p {
+    color: var(--muted-color);
+    margin-bottom: 0;
+}
+
+/* =====================================
+   9. NOTICE SECTION
+===================================== */
+
+.notice {
+    margin: var(--spacing-large) 0;
+    padding: var(--spacing-large);
+    text-align: center;
+    color: white;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+}
+
+.notice h2 {
+    color: white;
+}
+
+.notice p {
+    margin-bottom: var(--spacing-medium);
+}
+
+/* =====================================
+   10. TABLE STYLES
+===================================== */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eef3ff;
+}
+
+tbody tr:hover {
+    background-color: #dbeafe;
+}
+
+/* =====================================
+   11. FORM STYLES
+===================================== */
+
+.form-section {
+    max-width: 750px;
+    margin: var(--spacing-large) auto;
+    padding: var(--spacing-large);
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-medium);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-small);
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: white;
+    color: var(--text-color);
+    font: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-color: var(--primary-color);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* =====================================
+   12. FOOTER
+===================================== */
+
+.site-footer {
+    margin-top: var(--spacing-large);
+    padding: 22px 16px;
+    text-align: center;
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+.site-footer p {
+    margin-bottom: 0;
+    font-size: var(--font-small);
+}
+
+/* =====================================
+   13. RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-content h1 {
+        font-size: 27px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        gap: 0;
+    }
+
+    .nav-links a {
+        padding: 10px 12px;
+    }
+
+    .form-section {
+        padding: var(--spacing-medium);
+    }
+}
+
+/* =====================================
+   14. ID SELECTOR EXAMPLE
+===================================== */
+
+#club-highlight {
+    color: var(--secondary-color);
+}
